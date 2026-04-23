@@ -6,9 +6,10 @@ This repository is used for testing Git and GitHub workflows.
 
 ## Purpose
 
-- Practice Git commands (init, add, commit, push, pull)
-- Verify SSH setup and GitHub connection
-- Test version control operations and commit history
+- Practice core Git workflows (init, add, commit, push, pull)
+- Configure and validate SSH authentication with GitHub
+- Understand version control concepts and commit history tracking
+- Experiment with basic project structure and repository management
 
 ---
 
@@ -48,6 +49,21 @@ All .html files are placed in the web/ directory
 ```
 
 This structure improves organization and makes the project easier to navigate.
+
+## 🌐 View HTML on Website (GitHub Pages)
+
+The HTML file can be accessed as a live website using GitHub Pages.
+
+### Setup
+
+1. Go to repository **Settings → Pages**
+2. Under **Source**, select:
+
+```bash
+Deploy from a branch
+Branch: main
+Folder: / (root)
+```
 
 ## Notes
 - Repository is for learning and testing only

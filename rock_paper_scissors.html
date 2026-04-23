@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>剪刀石头布游戏</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        button { margin: 10px; padding: 10px 20px; font-size: 18px; }
+        #result { margin-top: 20px; font-size: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>剪刀石头布游戏</h1>
+
+<button onclick="play('剪刀')">剪刀</button>
+<button onclick="play('石头')">石头</button>
+<button onclick="play('布')">布</button>
+
+<div id="result"></div>
+
+<script>
+    const choices = ['剪刀', '石头', '布'];
+    let win = 0, lose = 0, draw = 0;
+
+    function play(userChoice) {
+        const computerChoice = choices[Math.floor(Math.random() * 3)];
+        let message = `你出: ${userChoice}，电脑出: ${computerChoice}。`;
+
+        if (userChoice === computerChoice) {
+            message += ' 平局！';
+            draw++;
+        } else if (
+            (userChoice === '剪刀' && computerChoice === '布') ||
+            (userChoice === '石头' && computerChoice === '剪刀') ||
+            (userChoice === '布' && computerChoice === '石头')
+        ) {
+            message += ' 你赢了！';
+            win++;
+        } else {
+            message += ' 你输了！';
+            lose++;
+        }
+
+        message += `<br>胜: ${win} 平: ${draw} 负: ${lose}`;
+        document.getElementById('result').innerHTML = message;
+    }
+</script>
+
+</body>
+</html>
